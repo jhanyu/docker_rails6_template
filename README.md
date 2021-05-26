@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+1. Git clone
+   ```sh
+   $ git clone git@github.com:jhanyu/docker_rails6_template.git
+   ```
 
-Things you may want to cover:
+1. Build docker image
+   ```sh
+   $ cd docker_rails6_template
+   $ docker-compose build
+   ```
 
-* Ruby version
+## Boot the app
+1. Boot docker
+   ```sh
+   $ docker-compose up
+   ```
 
-* System dependencies
+1. Create database  
+   :warning: It takes time to start the database, so please wait for a while before executing.
+   ```sh
+   $ docker-compose exec web rake db:create
+   ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Stop the app
+1. Cleanup docker
+   ```sh
+   $ docker-compose down
+   ```
